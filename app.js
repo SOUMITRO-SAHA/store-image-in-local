@@ -8,6 +8,10 @@ import imageRoutes from './routes/image.routes.js';
 dotenv.config();
 const app = express();
 
+// Making the Upload Folder Public:
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+
 // routes
 app.use(imageRoutes);
 

@@ -11,6 +11,7 @@ export const uploadImage = async (req, res) => {
   const form = formidable({
     multiples: true,
     keepExtensions: true,
+    uploadDir: path.join(__dirname, '../uploads/courses'),
   });
   form.parse(req, async (err, fields, files) => {
     if (err) {
